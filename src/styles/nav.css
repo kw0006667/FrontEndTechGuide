@@ -433,6 +433,10 @@ body.sidebar-collapsed #sidebar-expand-toggle {
   flex-direction: column;
   transform: translateX(-100%);
   transition: transform 250ms ease;
+  height: 100vh;
+  padding-bottom: var(--safe-area-bottom);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 #mobile-drawer.open {
@@ -454,6 +458,10 @@ body.sidebar-collapsed #sidebar-expand-toggle {
   flex-direction: column;
   transform: translateX(100%);
   transition: transform 250ms ease;
+  height: 100vh;
+  padding-bottom: var(--safe-area-bottom);
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
 }
 
 #sections-panel.open {
@@ -668,6 +676,13 @@ body.sidebar-collapsed #sidebar-expand-toggle {
   .panel-section-link:hover {
     background: transparent;
     color: var(--color-text-heading);
+  }
+}
+
+@supports (height: 100dvh) {
+  #mobile-drawer,
+  #sections-panel {
+    height: 100dvh;
   }
 }
 

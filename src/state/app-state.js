@@ -136,5 +136,7 @@ export function setMobilePanelState(newState) {
   overlay?.classList.toggle('active', newState !== 'closed');
   hamburger?.setAttribute('aria-expanded', String(newState === 'drawer'));
   sectionsToggle?.setAttribute('aria-expanded', String(newState === 'sections'));
-  document.body.style.overflow = newState !== 'closed' ? 'hidden' : '';
+  const isPanelOpen = newState !== 'closed';
+  document.documentElement.classList.toggle('mobile-panel-open', isPanelOpen);
+  document.body.classList.toggle('mobile-panel-open', isPanelOpen);
 }
