@@ -112,6 +112,8 @@ class AppContentArea extends LitElement {
         ${buildNavFooter(prev, next)}
       `;
 
+      makeResponsiveContent(contentBody);
+
       // Add copy buttons
       contentBody.querySelectorAll('pre').forEach(addCopyButton);
 
@@ -190,6 +192,18 @@ function addCopyButton(pre) {
   });
   pre.style.position = 'relative';
   pre.appendChild(btn);
+}
+
+function makeResponsiveContent(root) {
+  root.querySelectorAll('table').forEach((table) => {
+    if (table.parentElement?.classList.contains('table-scroll')) return;
+    const wrapper = document.createElement('div');
+    wrapper.className = 'table-scroll';
+    wrapper.setAttribute('role', 'region');
+    wrapper.setAttribute('aria-label', '表格內容，可左右滑動');
+    table.parentNode?.insertBefore(wrapper, table);
+    wrapper.appendChild(table);
+  });
 }
 
 customElements.define('app-content-area', AppContentArea);

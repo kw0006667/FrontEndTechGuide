@@ -51,6 +51,8 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
@@ -61,6 +63,8 @@ body {
   overflow: hidden;
   height: 100vh;
   min-height: 100vh;
+  width: 100%;
+  max-width: 100%;
 }
 
 a {
@@ -79,8 +83,16 @@ a:hover {
   height: 100vh;
   min-height: 100vh;
   overflow: hidden;
+  width: 100%;
   max-width: 100%;
   transition: grid-template-columns 220ms ease;
+}
+
+app-content-area {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
 }
 
 body.sidebar-collapsed #app {
@@ -186,7 +198,8 @@ body.mobile-panel-open {
     grid-template-columns: 1fr;
     height: auto;
     min-height: calc(100vh - var(--topbar-height) - var(--safe-area-top));
-    max-width: 100vw;
+    width: 100%;
+    max-width: 100%;
     padding-top: calc(var(--topbar-height) + var(--safe-area-top));
   }
 
@@ -203,6 +216,12 @@ body.mobile-panel-open {
     height: auto;
     overflow-x: hidden;
     overflow-y: visible;
+    min-width: 0;
+  }
+
+  app-content-area {
+    width: 100%;
+    max-width: 100%;
     min-width: 0;
   }
 
