@@ -1,0 +1,17 @@
+{
+  "name": "frontend-tech-guide",
+  "version": "1.0.0",
+  "description": "資深前端工程師：從原理到實戰的全面技術指南",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "lit": "^3.2.0"
+  },
+  "devDependencies": {
+    "vite": "^5.4.0"
+  }
+}
