@@ -152,7 +152,8 @@ body.sidebar-collapsed #app {
 /* ─── Responsive ─── */
 @media (max-width: 767px) {
   body {
-    overflow: auto;
+    overflow-y: auto;
+    overflow-x: hidden;
   }
 
   body.sidebar-collapsed #app {
@@ -163,6 +164,7 @@ body.sidebar-collapsed #app {
     grid-template-columns: 1fr;
     height: auto;
     min-height: 100vh;
+    max-width: 100vw;
     padding-top: var(--topbar-height);
   }
 
@@ -175,8 +177,10 @@ body.sidebar-collapsed #app {
   }
 
   #content-area {
+    width: 100%;
     height: auto;
-    overflow: visible;
+    overflow-x: hidden;
+    overflow-y: visible;
     min-width: 0;
   }
 }

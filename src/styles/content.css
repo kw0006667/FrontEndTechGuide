@@ -108,6 +108,15 @@ section[id] {
   word-break: normal;
 }
 
+
+#content-body img,
+#content-body video,
+#content-body iframe,
+#content-body svg {
+  max-width: 100%;
+  height: auto;
+}
+
 #content-body p {
   margin: 0 0 16px;
   color: var(--color-text-primary);
@@ -325,4 +334,21 @@ section[id] {
   font-weight: 600;
   color: var(--color-text-heading);
   line-height: 1.3;
+}
+
+
+@media (max-width: 600px) {
+  .chapter-nav-footer {
+    flex-direction: column;
+  }
+
+  .chapter-nav-btn {
+    max-width: none;
+    width: 100%;
+  }
+
+  .chapter-nav-btn.next {
+    align-items: flex-start;
+    margin-left: 0;
+  }
 }
