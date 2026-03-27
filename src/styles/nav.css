@@ -497,6 +497,15 @@ body.sidebar-collapsed #sidebar-expand-toggle {
 }
 
 /* ─── Drawer Nav (chapters only) ─── */
+app-mobile-drawer,
+app-sections-panel {
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  flex-direction: column;
+  overflow: hidden;
+}
+
 #drawer-nav {
   overflow-y: auto;
   flex: 1;
